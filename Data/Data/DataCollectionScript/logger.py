@@ -4,10 +4,10 @@ import time
 import sys
 
 # --- CONFIGURATION ---
-SERIAL_PORT = 'COM7'   # Replace with your ESP32's Port (e.g., /dev/ttyUSB0 on Linux/Mac)
+SERIAL_PORT = 'COM7'
 BAUD_RATE = 115200
-OUTPUT_FILE = 'Normal2_data.csv'
-MAX_SAMPLES = 2000     # Number of samples to collect (approx 40 seconds at 50Hz)
+OUTPUT_FILE = 'data.csv'
+MAX_SAMPLES = 4000
 # ---------------------
 
 def collect_data():
@@ -50,4 +50,5 @@ def collect_data():
     ser.close()
 
 if __name__ == "__main__":
+
     collect_data()
