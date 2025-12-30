@@ -101,7 +101,7 @@ Feature inspection confirmed class separability before training.
 A neural network classifier was configured within Edge Impulse.
 
 <p align="left">
-  <img src="https://github.com/nimalan-parameswaran/SmartBio-Air/blob/main/TinyML_MotorPumpFaultDetection/src/Screenshot 2025-12-30 132800.png" width="600">
+  <img src="https://github.com/nimalan-parameswaran/SmartBio-Air/blob/main/TinyML_MotorPumpFaultDetection/src/5.png" width="600">
 </p>
 
 ---
@@ -114,7 +114,7 @@ A neural network classifier was configured within Edge Impulse.
 - **Training Loss:** 0.06
 
 <p align="left">
-  <img src="https://github.com/nimalan-parameswaran/SmartBio-Air/blob/main/TinyML_MotorPumpFaultDetection/src/5.png" width="600">
+  <img src="https://github.com/nimalan-parameswaran/SmartBio-Air/blob/main/TinyML_MotorPumpFaultDetection/src/6.1.png" width="600">
 </p>
 
 ---
@@ -127,7 +127,7 @@ A neural network classifier was configured within Edge Impulse.
 | Fault | 0.98 | 0.98 | 0.98 |
 
 <p align="left">
-  <img src="https://github.com/nimalan-parameswaran/SmartBio-Air/blob/main/TinyML_MotorPumpFaultDetection/src/6.png" width="600">
+  <img src="https://github.com/nimalan-parameswaran/SmartBio-Air/blob/main/TinyML_MotorPumpFaultDetection/src/6.2.png" width="600">
 </p>
 
 ---
@@ -167,7 +167,7 @@ A neural network classifier was configured within Edge Impulse.
   <img src="https://github.com/nimalan-parameswaran/SmartBio-Air/blob/main/TinyML_MotorPumpFaultDetection/src/8.png" width="600">
 </p>
 
-The evaluation confirms stable behavior on unseen samples.
+The evaluation confirms stable behaviour on unseen samples.
 
 ---
 
@@ -181,7 +181,7 @@ The evaluation confirms stable behavior on unseen samples.
 - Reduced memory footprint
 
 <p align="left">
-  <img src="https://github.com/nimalan-parameswaran/SmartBio-Air/blob/main/TinyML_MotorPumpFaultDetection/src/Screenshot 2025-12-30 134339.png" width="600">
+  <img src="https://github.com/nimalan-parameswaran/SmartBio-Air/blob/main/TinyML_MotorPumpFaultDetection/src/9.png" width="600">
 </p>
 
 ---
@@ -189,7 +189,7 @@ The evaluation confirms stable behavior on unseen samples.
 ## 8. TensorFlow Lite Model Export
 
 <p align="left">
-  <img src="https://github.com/nimalan-parameswaran/SmartBio-Air/blob/main/TinyML_MotorPumpFaultDetection/src/Screenshot 2025-12-30 134644.png" width="600">
+  <img src="https://github.com/nimalan-parameswaran/SmartBio-Air/blob/main/TinyML_MotorPumpFaultDetection/src/10.png" width="600">
 </p>
 
 ### Quantized Model (INT8)
@@ -217,7 +217,7 @@ The evaluation confirms stable behavior on unseen samples.
 ## 9. MYOSA Deployment
 
 <p align="left">
-  <img src="https://github.com/nimalan-parameswaran/SmartBio-Air/blob/main/TinyML_MotorPumpFaultDetection/src/Screenshot 2025-12-30 142038.png" width="600">
+  <img src="https://github.com/nimalan-parameswaran/SmartBio-Air/blob/main/TinyML_MotorPumpFaultDetection/src/11.png" width="600">
 </p>
 
 ### Deployment Steps
