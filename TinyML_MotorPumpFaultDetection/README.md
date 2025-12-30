@@ -3,23 +3,22 @@
 
 https://github.com/user-attachments/assets/3eb5bc1c-ce33-423c-a051-8dfc26945e4b
 
-
 ---
 
 ## 1. Project Overview
 
-This project implements a TinyML-based classification system to detect **Normal** and **Fault** operating conditions of a **6V DC Motor Air Pump**.  
-The model is trained and deployed using **Edge Impulse**, enabling real-time inference on microcontroller-class devices without internet connectivity.
+This project presents a TinyML-based classification system for identifying **Normal** and **Fault** operating conditions of a **6V DC Motor Air Pump**.  
+The complete pipeline is implemented using **Edge Impulse**, covering data ingestion, feature extraction, model training, evaluation, and embedded deployment.
 
-The solution is designed for embedded fault monitoring and predictive maintenance scenarios.
+The trained model is intended for real-time motor health monitoring on microcontroller platforms with constrained memory and power limits.
 
 ---
 
 ## 2. Dataset Description
 
-The dataset contains sensor readings collected from the air pump under two operating conditions.
+The dataset consists of time-series sensor readings captured from the air pump under controlled operating conditions.
 
-### Dataset Size
+### Dataset Composition
 
 | Class  | Samples |
 |------|---------|
@@ -27,53 +26,80 @@ The dataset contains sensor readings collected from the air pump under two opera
 | Fault  | 4000 |
 | **Total** | **8000** |
 
-### Data Split
+The dataset is balanced across both classes.
+
+### Data Split Strategy
 
 - **Training + Validation:** 80%
 - **Testing:** 20%
 
-Training data distribution:
+Internal split of training data:
 - **Training:** 70%
 - **Validation:** 10%
 
-The dataset is perfectly balanced, supporting unbiased classification.
+This split supports stable convergence and unbiased testing.
 
 ---
 
 ## 3. Data Upload to Edge Impulse
 
-### Procedure
+### Workflow
 
 1. A new Edge Impulse project was created.
-2. Sensor data files were uploaded via the **Data Acquisition** section.
-3. Labels (`normal`, `fault`) were assigned during upload.
-4. Data integrity and class balance were verified.
-5. Automatic train–test separation was applied.
-   
+2. Raw sensor files were uploaded using the **Data Acquisition** interface.
+3. Each sample was labeled as `normal` or `fault`.
+4. Sample distribution and signal quality were verified.
+5. Edge Impulse automatically assigned samples to training and test sets.
+
 <p align="left">
   <img src="https://github.com/nimalan-parameswaran/SmartBio-Air/blob/main/TinyML_MotorPumpFaultDetection/src/1.png" width="600">
 </p>
 
+---
+
 ## 4. Impulse Design
-### Create impulse 
+
+### 4.1 Create Impulse
+
+The impulse defines the end-to-end data flow from raw input to classification output.
 
 <p align="left">
   <img src="https://github.com/nimalan-parameswaran/SmartBio-Air/blob/main/TinyML_MotorPumpFaultDetection/src/2.png" width="600">
 </p>
 
-### Raw data
+The impulse consists of:
+- **Input Block:** Raw sensor signal
+- **Processing Block:** Feature extraction
+- **Learning Block:** Neural network classifier
 
-- **Parameters**
+---
+
+### 4.2 Raw Data Configuration
+
+Sensor parameters were configured according to the acquisition setup.
+
 <p align="left">
   <img src="https://github.com/nimalan-parameswaran/SmartBio-Air/blob/main/TinyML_MotorPumpFaultDetection/src/3.png" width="600">
 </p>
 
-- **Generate features**
+---
+
+### 4.3 Feature Generation
+
+Statistical and signal-domain features were extracted from the raw input.
+
 <p align="left">
   <img src="https://github.com/nimalan-parameswaran/SmartBio-Air/blob/main/TinyML_MotorPumpFaultDetection/src/4.png" width="600">
 </p>
 
-### Classifiers
+Feature inspection confirmed class separability before training.
+
+---
+
+### 4.4 Classifier Configuration
+
+A neural network classifier was configured within Edge Impulse.
+
 <p align="left">
   <img src="https://github.com/nimalan-parameswaran/SmartBio-Air/blob/main/TinyML_MotorPumpFaultDetection/src/Screenshot 2025-12-30 132800.png" width="600">
 </p>
@@ -91,6 +117,8 @@ The dataset is perfectly balanced, supporting unbiased classification.
   <img src="https://github.com/nimalan-parameswaran/SmartBio-Air/blob/main/TinyML_MotorPumpFaultDetection/src/5.png" width="600">
 </p>
 
+---
+
 ### Class-wise Performance
 
 | Class | Precision | Recall | F1 Score |
@@ -102,6 +130,7 @@ The dataset is perfectly balanced, supporting unbiased classification.
   <img src="https://github.com/nimalan-parameswaran/SmartBio-Air/blob/main/TinyML_MotorPumpFaultDetection/src/6.png" width="600">
 </p>
 
+---
 
 ### Aggregate Metrics
 
@@ -138,27 +167,29 @@ The dataset is perfectly balanced, supporting unbiased classification.
   <img src="https://github.com/nimalan-parameswaran/SmartBio-Air/blob/main/TinyML_MotorPumpFaultDetection/src/8.png" width="600">
 </p>
 
-The testing results confirm consistent performance on unseen data.
+The evaluation confirms stable behavior on unseen samples.
 
 ---
 
 ## 7. Deployment Configuration
 
-### Selected Deployment
+### Selected Deployment Option
 
 - **Arduino Library**
-- Runs fully offline
-- Low latency and low power consumption
+- Offline execution
+- Low inference latency
+- Reduced memory footprint
 
 <p align="left">
   <img src="https://github.com/nimalan-parameswaran/SmartBio-Air/blob/main/TinyML_MotorPumpFaultDetection/src/Screenshot 2025-12-30 134339.png" width="600">
 </p>
+
 ---
 
 ## 8. TensorFlow Lite Model Export
 
-<p align="center">
-  <img src="https://github.com/nimalan-parameswaran/SmartBio-Air/blob/main/TinyML_MotorPumpFaultDetection/src/Screenshot 2025-12-30 134339.png" width="600">
+<p align="left">
+  <img src="https://github.com/nimalan-parameswaran/SmartBio-Air/blob/main/TinyML_MotorPumpFaultDetection/src/Screenshot 2025-12-30 134644.png" width="600">
 </p>
 
 ### Quantized Model (INT8)
@@ -166,8 +197,8 @@ The testing results confirm consistent performance on unseen data.
 | Parameter | Value |
 |--------|------|
 | Inference Time | 1 ms |
-| RAM | 3.0 KB |
-| Flash | 34.4 KB |
+| RAM Usage | 3.0 KB |
+| Flash Usage | 34.4 KB |
 | Accuracy | 97.60% |
 
 ### Float Model (FP32)
@@ -175,37 +206,39 @@ The testing results confirm consistent performance on unseen data.
 | Parameter | Value |
 |--------|------|
 | Inference Time | 1 ms |
-| RAM | 3.1 KB |
-| Flash | 35.0 KB |
+| RAM Usage | 3.1 KB |
+| Flash Usage | 35.0 KB |
 | Accuracy | 97.23% |
 
-**Target Device Estimate:** Cortex-M4F @ 80 MHz
+**Target Hardware:** @MYOSA-EPS32
 
 ---
 
-## 9. Arduino Deployment
+## 9. MYOSA Deployment
 
 <p align="left">
-  <img src="https://github.com/nimalan-parameswaran/SmartBio-Air/blob/main/TinyML_MotorPumpFaultDetection/src/9.png" width="600">
+  <img src="https://github.com/nimalan-parameswaran/SmartBio-Air/blob/main/TinyML_MotorPumpFaultDetection/src/Screenshot 2025-12-30 142038.png" width="600">
 </p>
 
-### Steps
+### Deployment Steps
 
-1. Downloaded the Arduino library from Edge Impulse.
-2. Imported the library into Arduino IDE.
-3. Loaded the inference example.
-4. Connected the motor and sensor setup.
-5. Observed classification output via Serial Monitor.
+1. The Arduino library was downloaded from Edge Impulse.
+2. The library was added to the Arduino IDE.
+3. The inference example sketch was opened.
+4. The MYOSA board, motor, and sensors were connected.
+5. Classification results were observed through the Serial Monitor.
 
 ---
 
 ## 10. Directory Structure
 
-TinyML_MotorPumpFaultDetection/
+```TinyML_MotorPumpFaultDetection/
 ├── src/
 │ ├── 1.png
 │ ├── 2.png
 │ ├── ...
-├── arduino_library/
-├── model_export/
+├── FaultDetection_ModelFile/
+├── FaultDetection_Inferencing/
 └── README.md
+```
+
