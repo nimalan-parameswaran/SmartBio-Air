@@ -233,12 +233,17 @@ The evaluation confirms stable behaviour on unseen samples.
 ## 10. Directory Structure
 
 ```TinyML_MotorPumpFaultDetection/
+
+
+├── FaultDetection_Inferencing/
+│ ├── Test_interface.ino
+├── FaultDetection_ModelFile/
+│ ├── ei-myosa-6vdmp-fault-detection-arduino-1.0.2-TFlite.zip !use 
+│ ├── ei-myosa-6vdmp-fault-detection-arduino-1.0.2-EON.zip
 ├── src/
 │ ├── 1.png
 │ ├── 2.png
 │ ├── ...
-├── FaultDetection_ModelFile/
-├── FaultDetection_Inferencing/
 └── README.md
 ```
 
