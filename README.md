@@ -94,7 +94,7 @@ The system operates in two modes: a primary Edge control mode for uninterrupted 
   <img src="src/video/360.gif" width="50%" />
 </p>
 
-<h1 align="center"> Prototype </h1>
+<h3 align="center"> Prototype </h3>
 
 ---
 ## Process Flow:
@@ -107,22 +107,22 @@ The system operates in two modes: a primary Edge control mode for uninterrupted 
 ## Demo  
 
 ### Images  
-_Add images of the system setup, algae chamber, sensor wiring, OLED output, and web dashboard._
-
-### Videos  
----
-
 <p align="center">
   <img src="src/image/Img3.png" width="600">
 </p>
 
+<h3 align="center"> Prototype </h3>
+
 ---
+
+### Videos  
 
 <p align="center">
   <img src="src/video/Demo.gif" width="100%" />
 </p>
 
-<p></p>  GitHub Static Web App
+<h1 align="center">  GitHub Static Web App </h1>
+
 ---
 
 ## Novelty  
