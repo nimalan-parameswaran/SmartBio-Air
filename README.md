@@ -96,6 +96,9 @@ The system operates in two modes: an offline mode for uninterrupted autonomous o
 
 ---
 ## Process Flow:
+<p align="center">
+  <img src="src/image/SmartBio Air – Process Flow.png" width="600">
+</p>
 
 ---
 
