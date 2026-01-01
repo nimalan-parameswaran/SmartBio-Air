@@ -91,8 +91,10 @@ Time-sensitive decisions such as air quality response and motor pump health clas
 The system operates in two modes: a primary Edge control mode for uninterrupted autonomous operation and a Cloud AI Agent mode intended for environmental analysis and algae growth research.
 
 <p align="center">
-  <img src="src/image/Img3.png" width="600">
+  <img src="src/video/360.gif" width="50%" />
 </p>
+
+<h1 align="center"> Prototype </h1>
 
 ---
 ## Process Flow:
@@ -108,11 +110,10 @@ The system operates in two modes: a primary Edge control mode for uninterrupted 
 _Add images of the system setup, algae chamber, sensor wiring, OLED output, and web dashboard._
 
 ### Videos  
-_Add a short demonstration video showing live system operation._
-
 ---
+
 <p align="center">
-  <img src="src/video/360.gif" width="100%" />
+  <img src="src/image/Img3.png" width="600">
 </p>
 
 ---
@@ -121,6 +122,7 @@ _Add a short demonstration video showing live system operation._
   <img src="src/video/Demo.gif" width="100%" />
 </p>
 
+<p></p>  GitHub Static Web App
 ---
 
 ## Novelty  
