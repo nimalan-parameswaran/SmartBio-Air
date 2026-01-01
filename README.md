@@ -90,6 +90,10 @@ Time-sensitive decisions such as air quality response and motor pump health clas
 
 The system operates in two modes: an offline mode for uninterrupted autonomous operation and an online mode intended for environmental analysis and algae growth research.
 
+<p align="center">
+  <img src="src/image/Img3.png" width="600">
+</p>
+
 ---
 
 ## Process Flow:
