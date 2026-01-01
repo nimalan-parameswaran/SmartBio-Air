@@ -83,7 +83,6 @@ The primary objectives of this project are:
 - To support long-term data collection and visualization for research and analysis
 
 ---
-
 ## Solution  
 SmartBio Air proposes a hybrid Edge AI and Cloud AI system deployed on the MYOSA Mini IoT Kit. The system integrates gas sensors, environmental sensors, and a biologically active algae chamber to support both air purification and research observation.
 
@@ -93,7 +92,19 @@ The system operates in two modes: an offline mode for uninterrupted autonomous o
 
 ---
 
-## Innovation / Novelty  
+## Process Flow:
+
+<p align="center">
+  <img src="src/video/Demo2.gif" width="100%" />
+</p>
+
+---
+
+## System Architecture:
+
+---
+
+## Novelty  
 
 - Integration of living microalgae as an active biological air treatment component within an intelligent indoor air purification system  
 
