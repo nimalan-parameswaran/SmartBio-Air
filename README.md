@@ -99,7 +99,7 @@ The system operates in two modes: a primary Edge control mode for uninterrupted 
 ---
 ## Process Flow:
 <p align="center">
-  <img src="src/image/SmartBio Air – Process Flow.png" width="600">
+  <img src="src/image/SmartBio Air – Process Flow.png" width=auto>
 </p>
 
 ---
