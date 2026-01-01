@@ -95,12 +95,7 @@ The system operates in two modes: an offline mode for uninterrupted autonomous o
 </p>
 
 ---
-
 ## Process Flow:
-
-<p align="center">
-  <img src="src/video/Demo2.gif" width="100%" />
-</p>
 
 ---
 
@@ -158,6 +153,11 @@ _Add a short demonstration video showing live system operation._
 
 ---
 
+<p align="center">
+  <img src="src/video/Demo.gif" width="100%" />
+</p>
+
+---
 ## Features (Detailed)  
 
 - Algae-assisted indoor air purification chamber  
