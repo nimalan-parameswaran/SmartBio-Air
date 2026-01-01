@@ -9,6 +9,8 @@
 ### Excerpt: Short 1–2 line description of your project
 
 ### Contributor
+    Nimalan P
+    Dhakshatha M K
 
 ## Acknowledgements
 ## Overview
