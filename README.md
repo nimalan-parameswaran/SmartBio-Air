@@ -102,7 +102,19 @@ The system operates in two modes: a primary Edge control mode for uninterrupted 
 
 ---
 
-## System Architecture:
+## Demo  
+
+### Images  
+_Add images of the system setup, algae chamber, sensor wiring, OLED output, and web dashboard._
+
+### Videos  
+_Add a short demonstration video showing live system operation._
+
+---
+
+<p align="center">
+  <img src="src/video/Demo.gif" width="100%" />
+</p>
 
 ---
 
@@ -146,21 +158,6 @@ The expected outcomes of the project include:
 
 ---
 
-## Demo  
-
-### Images  
-_Add images of the system setup, algae chamber, sensor wiring, OLED output, and web dashboard._
-
-### Videos  
-_Add a short demonstration video showing live system operation._
-
----
-
-<p align="center">
-  <img src="src/video/Demo.gif" width="100%" />
-</p>
-
----
 ## Features (Detailed)  
 
 - Algae-assisted indoor air purification chamber  
