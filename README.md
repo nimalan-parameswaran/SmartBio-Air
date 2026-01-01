@@ -41,11 +41,11 @@ Finally, we acknowledge **Ms. Pinki Dey**, Assistant Professor II, Department of
 
 The platform operates using a hybrid intelligence model in which time-sensitive and safety-related decisions are executed locally on the MYOSA Mini IoT Kit, while research-oriented observation, data correlation, and long-term interpretation are performed using cloud-based AI services. This separation allows continuous and safe operation during network unavailability, while still enabling extended scientific investigation when connectivity is present.
 
-Two operating modes are implemented:
+The system architecture is bifurcated into two synchronized operational states:
 
-- **Offline Edge Mode**, which prioritises autonomous operation, motor pump protection, and air quality response using on-device inference and predefined threshold logic. This mode supports uninterrupted air purification without dependence on internet connectivity.
+- **Primary Edge Control Mode**, which prioritises autonomous operation, motor pump protection, and air quality response using on-device inference and predefined threshold logic. This mode supports uninterrupted air purification without dependence on internet connectivity.
 
-- **Online Cloud Mode**, which is primarily intended for research purposes. In this mode, full sensor data is transmitted to the cloud to study how algae growth responds to changes in air pollution levels, light conditions, temperature, and other environmental factors. Centralised data logging, AI agent–based reasoning, and web-based visualisation support long-term analysis and pattern identification.
+- **Cloud AI Agent Mode**, which is primarily intended for research purposes. In this mode, full sensor data is transmitted to the cloud to study how algae growth responds to changes in air pollution levels, light conditions, temperature, and other environmental factors. Centralised data logging, AI agent–based reasoning, and web-based visualisation support long-term analysis and pattern identification.
 
 By combining biological air treatment, Edge AI–based safety mechanisms, and cloud-assisted research workflows, SmartBio Air functions both as a practical indoor air purification system and as a research platform suitable for studies in TinyML, IoT-based environmental sensing, and sustainable bio-assisted systems.
 
@@ -88,7 +88,7 @@ SmartBio Air proposes a hybrid Edge AI and Cloud AI system deployed on the MYOSA
 
 Time-sensitive decisions such as air quality response and motor pump health classification are executed locally on the device using on-device inference and threshold logic. For research purposes, sensor data is transmitted to cloud-based services where it is stored, correlated, and interpreted using AI agents.
 
-The system operates in two modes: an offline mode for uninterrupted autonomous operation and an online mode intended for environmental analysis and algae growth research.
+The system operates in two modes: a primary Edge control mode for uninterrupted autonomous operation and a Cloud AI Agent mode intended for environmental analysis and algae growth research.
 
 <p align="center">
   <img src="src/image/Img3.png" width="600">
