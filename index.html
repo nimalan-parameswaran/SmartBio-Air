@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MYOSA Advanced Bioreactor Dashboard</title>
+    <title>SmartBio AIR Advanced Bioreactor Dashboard</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
     
@@ -75,13 +75,7 @@
             font-weight: 600;
             border: 1px solid var(--neon-green);
             box-shadow: 0 0 15px rgba(52, 211, 153, 0.2);
-            animation: pulse 2s infinite;
-        }
-
-        @keyframes pulse {
-            0% { box-shadow: 0 0 0 0 rgba(52, 211, 153, 0.4); }
-            70% { box-shadow: 0 0 0 10px rgba(52, 211, 153, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(52, 211, 153, 0); }
+            transition: all 0.3s ease;
         }
 
         /* Section Titles */
@@ -182,6 +176,11 @@
             border-radius: 4px;
             display: inline-block;
         }
+        
+        .sub-status.bad { 
+            color: var(--neon-red); 
+            background: rgba(248, 113, 113, 0.1);
+        }
 
         /* Charts Wrapper */
         .charts-wrapper {
@@ -219,79 +218,69 @@
 
 <div class="container">
     <header>
-        <h1>MYOSA <span class="logo-text">SmartBio AIR</span> </h1>
-        <div class="status-badge" id="connectionStatus">● SYSTEM ACTIVE</div>
+        <h1>MYOSA <span class="logo-text">SmartBio AIR</span></h1>
+        <div class="status-badge" id="connectionStatus">Connecting...</div>
     </header>
 
     <!-- Row 1: Gas Analysis -->
     <div class="section-title">Gas Composition Analysis</div>
     <div class="dashboard-grid">
-        <!-- MQ-135 -->
         <div class="card type-gas">
             <h3>MQ-135 <span>Air Quality</span></h3>
             <div class="metric" id="mq135Metric">--</div>
-            <div class="sub-status">CO2 / NH3 Levels Normal</div>
+            <div class="sub-status" id="mq135Status">Syncing...</div>
         </div>
-        <!-- MQ-2 -->
         <div class="card type-gas">
             <h3>MQ-2 <span>Combustible</span></h3>
             <div class="metric" id="mq2Metric">--</div>
-            <div class="sub-status">Smoke / LPG Clear</div>
+            <div class="sub-status">Smoke / LPG</div>
         </div>
-        <!-- MQ-3 -->
         <div class="card type-gas">
             <h3>MQ-3 <span>Alcohol/VOC</span></h3>
             <div class="metric" id="mq3Metric">--</div>
-            <div class="sub-status">VOC Levels Nominal</div>
+            <div class="sub-status">Volatile Compounds</div>
         </div>
-        <!-- MQ-7 -->
         <div class="card type-gas">
             <h3>MQ-7 <span>Carbon Monoxide</span></h3>
             <div class="metric" id="mq7Metric">--</div>
-            <div class="sub-status">CO Trace Negligible</div>
+            <div class="sub-status">CO Trace</div>
         </div>
     </div>
 
     <!-- Row 2: Bioreactor & Environment -->
     <div class="section-title">Bioreactor & System Health</div>
     <div class="dashboard-grid">
-        <!-- Algae -->
         <div class="card type-bio">
             <h3>APDS-9960 <span>Biomass</span></h3>
             <div class="metric" id="algaeMetric">--<span class="unit">OD</span></div>
-            <div class="sub-status">Photosynthesis Active</div>
+            <div class="sub-status" id="algaeStatus">Photosynthesis</div>
         </div>
-        <!-- Temp -->
         <div class="card type-env">
             <h3>Temperature <span>MPU/BMP</span></h3>
-            <div class="metric" style="color: var(--neon-orange); -webkit-text-fill-color: var(--neon-orange);" id="tempMetric">--<span class="unit">°C</span></div>
-            <div class="sub-status">Thermal Stability OK</div>
+            <div class="metric" id="tempMetric">--<span class="unit">°C</span></div>
+            <div class="sub-status">Thermal Stability</div>
         </div>
-        <!-- Pressure -->
         <div class="card type-env">
             <h3>Pressure <span>BMP180</span></h3>
-            <div class="metric" style="color: var(--neon-blue); -webkit-text-fill-color: var(--neon-blue);" id="pressMetric">--<span class="unit">Pa</span></div>
-            <div class="sub-status">Atmospheric Steady</div>
+            <div class="metric" id="pressMetric">--<span class="unit">Pa</span></div>
+            <div class="sub-status">Atmospheric</div>
         </div>
-        <!-- Motor -->
         <div class="card type-sys">
             <h3>Pump Actuator <span>L298N</span></h3>
-            <div class="metric" style="color: var(--neon-purple); -webkit-text-fill-color: var(--neon-purple);" id="motorMetric">RUN</div>
-            <div class="sub-status">Vibration Signature: Good</div>
+            <div class="metric" id="motorMetric">--</div>
+            <div class="sub-status" id="motorStatus">Vibration Analysis</div>
         </div>
     </div>
 
     <!-- Charts Section -->
     <div class="charts-wrapper">
-        <!-- Chart 1: Multi-Gas -->
         <div class="chart-container">
             <div class="chart-header">
                 <div class="chart-title">Real-time Gas Spectrum</div>
-                <div style="font-size: 0.8em; color: var(--text-secondary);">Simulated Data Stream</div>
+                <div style="font-size: 0.8em; color: var(--text-secondary);">Last 50 Readings</div>
             </div>
             <canvas id="gasChart"></canvas>
         </div>
-        <!-- Chart 2: Biological -->
         <div class="chart-container">
             <div class="chart-header">
                 <div class="chart-title">Bioreactor Conditions</div>
@@ -303,18 +292,21 @@
 </div>
 
 <script>
-    // --- MOCK DATA CONFIGURATION ---
-    const UPDATE_INTERVAL_MS = 1500; // Update speed
-    const MAX_POINTS = 30;
+    // --- CONFIGURATION ---
+    // ------------------------------------------------------------------
 
-    let historyData = [];
+    const AZURE_API_URL = MY_API
+    // ------------------------------------------------------------------
+    
+    // Refresh rate (default 5 seconds)
+    const UPDATE_INTERVAL_MS = 5000; 
 
     // Chart Defaults for New Theme
     Chart.defaults.color = '#94a3b8';
     Chart.defaults.font.family = "'Montserrat', sans-serif";
     Chart.defaults.scale.grid.color = 'rgba(255, 255, 255, 0.05)';
 
-    // --- CHART 1: GAS ANALYSIS SETUP ---
+    // --- CHART 1: GAS ANALYSIS ---
     const ctxGas = document.getElementById('gasChart').getContext('2d');
     const gasChart = new Chart(ctxGas, {
         type: 'line',
@@ -334,13 +326,13 @@
                 legend: { position: 'top', align: 'end', labels: { usePointStyle: true, boxWidth: 8 } }
             },
             scales: {
-                y: { beginAtZero: true, grid: { borderDash: [5, 5] }, suggestedMax: 600 },
+                y: { beginAtZero: true, grid: { borderDash: [5, 5] } },
                 x: { display: false }
             }
         }
     });
 
-    // --- CHART 2: BIO SETUP ---
+    // --- CHART 2: BIO HEALTH ---
     const ctxBio = document.getElementById('bioChart').getContext('2d');
     const bioChart = new Chart(ctxBio, {
         type: 'line',
@@ -385,67 +377,117 @@
                 y1: {
                     position: 'right',
                     grid: { drawOnChartArea: false },
-                    title: { display: true, text: 'Temp (°C)' },
-                    suggestedMin: 20, suggestedMax: 35
+                    title: { display: true, text: 'Temp (°C)' }
                 },
                 x: { display: false }
             }
         }
     });
 
-    // --- DATA GENERATOR ---
-    function generateValues() {
-        const now = new Date();
-        const timeLabel = now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds();
-
-        // Generate "Good" status random data
-        const newData = {
-            label: timeLabel,
-            mq135: 380 + Math.random() * 40,  // Range 380-420
-            mq2: 210 + Math.random() * 30,    // Range 210-240
-            mq3: 150 + Math.random() * 20,    // Range 150-170
-            mq7: 80 + Math.random() * 15,     // Range 80-95
-            algae: 750 + Math.random() * 60,  // Range 750-810 (High is good)
-            temp: 26 + Math.random() * 0.5,   // Stable Temp
-            pressure: 101320 + Math.random() * 50 // Stable Pressure
-        };
-
-        // Update Charts
-        if (gasChart.data.labels.length > MAX_POINTS) {
-            gasChart.data.labels.shift();
-            gasChart.data.datasets.forEach(d => d.data.shift());
-            bioChart.data.labels.shift();
-            bioChart.data.datasets.forEach(d => d.data.shift());
-        }
-
-        // Push to Gas Chart
-        gasChart.data.labels.push(newData.label);
-        gasChart.data.datasets[0].data.push(newData.mq135);
-        gasChart.data.datasets[1].data.push(newData.mq2);
-        gasChart.data.datasets[2].data.push(newData.mq3);
-        gasChart.data.datasets[3].data.push(newData.mq7);
-        gasChart.update('none'); // 'none' for smooth animation
-
-        // Push to Bio Chart
-        bioChart.data.labels.push(newData.label);
-        bioChart.data.datasets[0].data.push(newData.algae);
-        bioChart.data.datasets[1].data.push(newData.temp);
-        bioChart.update('none');
-
-        // Update Text Metrics
-        document.getElementById('mq135Metric').innerText = Math.floor(newData.mq135);
-        document.getElementById('mq2Metric').innerText = Math.floor(newData.mq2);
-        document.getElementById('mq3Metric').innerText = Math.floor(newData.mq3);
-        document.getElementById('mq7Metric').innerText = Math.floor(newData.mq7);
+    // --- REAL DATA FETCHING ---
+    async function fetchData() {
+        const statusBadge = document.getElementById('connectionStatus');
         
-        document.getElementById('algaeMetric').innerHTML = Math.floor(newData.algae) + '<span class="unit">OD</span>';
-        document.getElementById('tempMetric').innerHTML = newData.temp.toFixed(1) + '<span class="unit">°C</span>';
-        document.getElementById('pressMetric').innerHTML = Math.floor(newData.pressure) + '<span class="unit">Pa</span>';
+        try {
+            // Fetch data from Azure
+            const response = await fetch(AZURE_API_URL);
+            
+            if (!response.ok) throw new Error("API Error: " + response.status);
+            
+            const history = await response.json();
+            
+            if (!Array.isArray(history) || history.length === 0) {
+                statusBadge.innerText = "● Waiting for Data...";
+                statusBadge.style.backgroundColor = "transparent";
+                statusBadge.style.color = "#fbbf24";
+                statusBadge.style.borderColor = "#fbbf24";
+                return;
+            }
+
+            // Connection Success
+            statusBadge.innerText = "● LIVE STREAM";
+            statusBadge.style.backgroundColor = "rgba(52, 211, 153, 0.1)";
+            statusBadge.style.color = "#34d399";
+            statusBadge.style.borderColor = "#34d399";
+            statusBadge.style.boxShadow = "0 0 15px rgba(52, 211, 153, 0.2)";
+
+            updateDashboard(history);
+
+        } catch (error) {
+            console.error(error);
+            statusBadge.innerText = "● OFFLINE";
+            statusBadge.style.backgroundColor = "rgba(248, 113, 113, 0.1)";
+            statusBadge.style.color = "#f87171";
+            statusBadge.style.borderColor = "#f87171";
+            statusBadge.style.boxShadow = "none";
+        }
     }
 
-    // Start Simulation
-    setInterval(generateValues, UPDATE_INTERVAL_MS);
-    generateValues(); // Run once immediately
+    function updateDashboard(history) {
+        // 1. Get Latest Data Point
+        const latest = history[history.length - 1];
+
+        // 2. Update Metric Cards
+        document.getElementById('mq135Metric').innerText = latest.mq135;
+        document.getElementById('mq2Metric').innerText = latest.mq2;
+        document.getElementById('mq3Metric').innerText = latest.mq3;
+        document.getElementById('mq7Metric').innerText = latest.mq7;
+
+        document.getElementById('algaeMetric').innerHTML = latest.algae + '<span class="unit">OD</span>';
+        document.getElementById('tempMetric').innerHTML = parseFloat(latest.temp).toFixed(1) + '<span class="unit">°C</span>';
+        document.getElementById('pressMetric').innerHTML = parseInt(latest.pressure) + '<span class="unit">Pa</span>';
+
+        // Motor Fault Logic
+        const motorEl = document.getElementById('motorMetric');
+        const motorStat = document.getElementById('motorStatus');
+        
+        if (latest.motor_fault == 1) {
+            motorEl.innerText = "FAULT";
+            motorEl.style.color = "#f87171"; // Neon Red
+            motorStat.innerText = "Vibration: CRITICAL";
+            motorStat.className = "sub-status bad";
+        } else {
+            motorEl.innerText = "RUN";
+            motorEl.style.color = "#c084fc"; // Neon Purple
+            motorStat.innerText = "Vibration: Normal";
+            motorStat.className = "sub-status";
+        }
+
+        // Air Quality Logic (Visual Only)
+        const aqStatus = document.getElementById('mq135Status');
+        if (latest.mq135 > 2000) {
+            aqStatus.innerText = "Air Quality: POOR";
+            aqStatus.className = "sub-status bad";
+        } else {
+            aqStatus.innerText = "Air Quality: Good";
+            aqStatus.className = "sub-status";
+        }
+
+
+        // 3. Update Charts (Rebuild arrays from history)
+        const labels = history.map(d => {
+            const date = new Date(parseFloat(d.timestamp) * 1000);
+            return date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
+        });
+
+        // Update Gas Chart
+        gasChart.data.labels = labels;
+        gasChart.data.datasets[0].data = history.map(d => d.mq135);
+        gasChart.data.datasets[1].data = history.map(d => d.mq2);
+        gasChart.data.datasets[2].data = history.map(d => d.mq3);
+        gasChart.data.datasets[3].data = history.map(d => d.mq7);
+        gasChart.update('none'); // No animation for smoother real-time feel
+
+        // Update Bio Chart
+        bioChart.data.labels = labels;
+        bioChart.data.datasets[0].data = history.map(d => d.algae);
+        bioChart.data.datasets[1].data = history.map(d => d.temp);
+        bioChart.update('none');
+    }
+
+    // --- INITIALIZATION ---
+    fetchData(); // Run once immediately
+    setInterval(fetchData, UPDATE_INTERVAL_MS); // Loop
 
 </script>
 </body>
