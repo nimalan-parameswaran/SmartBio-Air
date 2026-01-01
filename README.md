@@ -6,7 +6,7 @@
 
 #### Title: SmartBio Air: AI-Driven Indoor Algae Based Air Purification System Using MYOSA Mini IoT Kit
 
-#### Excerpt: An indoor air purification and research system that integrates living algae, multi-sensor environmental sensing, Edge AI–based safety control, and Cloud AI–assisted research analysis using the MYOSA Mini IoT Kit.
+#### An indoor air purification and research system that integrates living algae, multi-sensor environmental sensing, Edge AI–based safety control, and Cloud AI–assisted research analysis using the MYOSA Mini IoT Kit.
 
 
 ---
@@ -222,13 +222,23 @@ The expected outcomes of the project include:
 
 ## Requirements / Installation  
 
-- MYOSA Mini IoT Kit  
-- Arduino IDE or PlatformIO  
-- Edge Impulse account for model deployment  
-- Microsoft Azure account  
-- Stable power supply for continuous operation  
+## Installation and setup
 
-Flash the firmware to the MYOSA board after configuring Wi-Fi credentials and cloud endpoints.
+This repository does not include automated installation or flashing scripts. The available setup steps are limited to the repository contents:
+
+1. Clone the repository:
+   ```sh
+   git clone https://github.com/nimalan-parameswaran/SmartBio-Air.git
+
+2. Open the static project page:
+
+- Launch index.html in a web browser to view the project overview and visuals.
+
+3. Review embedded inference assets:
+
+- Inspect the TinyML_MotorPumpFaultDetection directory for TinyML model files and headers intended for embedded use.
+
+Hardware deployment and firmware flashing require external tools and are not documented in this repository.
 
 ---
 
@@ -236,24 +246,36 @@ Flash the firmware to the MYOSA board after configuring Wi-Fi credentials and cl
 
 ```
 SmartBio-Air/
-├── firmware/
-│ ├── sensors/
-│ ├── edge_ml/
-│ └── main.ino
-├── cloud/
-│ └── azure-function/
-├── web/
-│ └── static-dashboard/
-├── docs/
-│ └── diagrams/
-└── README.md
+├── index.html — Static web-based project overview
+│
+├── Data/ — Project data folder
+│ ├── DataCollectionScript/
+│ ├── Datasets/
+│ ├── Data_Preprocessing_and_EDA.ipynb
+│ └── EdgeImpulse_Final_dataset.csv
+│
+├── Main/ — Main project resources
+│ ├── AGENT_MAIN/
+│ ├── MYOSA-MAIN/
+│ └── WEBAPP_MAIN/
+│
+├── TinyML_MotorPumpFaultDetection/ — TinyML model files and related artefacts
+│ ├── FaultDetection_Inferencing/
+│ ├── FaultDetection_ModelFile/
+│ ├── src/
+│ └── README.md/
+│
+├── src/ — Assets used by the static web interface
+├── LICENSE — MIT License
+└── README.md — Project documentation
+
 ```
 
 ## License
-This project may be released under the **MIT License** or another academic-friendly open-source license, subject to publication requirements.
+This project is licensed under the MIT License. See the LICENSE file for details.
 
 ---
 
-## Contribution Notes (Optional)  
+## Contribution Notes
 This repository is intended for research and educational use.  
 Contributors are encouraged to document experimental conditions, sensor calibration steps, and data collection procedures clearly when submitting updates.
