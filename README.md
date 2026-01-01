@@ -6,7 +6,8 @@
 
 #### Title: SmartBio Air: AI-Driven Indoor Algae Based Air Purification System Using MYOSA Mini IoT Kit
 
-#### Excerpt: A hybrid Edge AI and Cloud AI system that studies and supports indoor air purification using living algae, multi-sensor monitoring, and autonomous safety control on the MYOSA Mini IoT platform
+#### Excerpt: An indoor air purification and research system that integrates living algae, multi-sensor environmental sensing, Edge AI–based safety control, and Cloud AI–assisted research analysis using the MYOSA Mini IoT Kit.
+
 
 ---
 
@@ -35,22 +36,100 @@ Finally, we acknowledge **Ms. Pinki Dey**, Assistant Professor II, Department of
 ---
 
 ## Overview  
-SmartBio Air is an indoor air purification and experimental research system that combines **biological air treatment using algae** with **sensor-driven intelligence**. The system operates in two clearly defined modes:
 
-- **Offline Edge Mode** for safety-critical and continuous operation  
-- **Online Cloud Mode** for environmental correlation, monitoring, and scientific study  
+**SmartBio Air** is an indoor air purification and experimental research system that combines biological air treatment using algae with multi-sensor environmental monitoring and intelligent control. The system is designed not only to support indoor air purification, but also to experimentally observe and document the relationship between environmental conditions, air pollutants, and algae growth behavior over time.
 
-The architecture separates real-time control from long-term analysis, making the system suitable for both deployment scenarios and academic investigation.
+The platform operates using a hybrid intelligence model in which time-sensitive and safety-related decisions are executed locally on the MYOSA Mini IoT Kit, while research-oriented observation, data correlation, and long-term interpretation are performed using cloud-based AI services. This separation allows continuous and safe operation during network unavailability, while still enabling extended scientific investigation when connectivity is present.
+
+Two operating modes are implemented:
+
+- **Offline Edge Mode**, which prioritises autonomous operation, motor pump protection, and air quality response using on-device inference and predefined threshold logic. This mode supports uninterrupted air purification without dependence on internet connectivity.
+
+- **Online Cloud Mode**, which is primarily intended for research purposes. In this mode, full sensor data is transmitted to the cloud to study how algae growth responds to changes in air pollution levels, light conditions, temperature, and other environmental factors. Centralised data logging, AI agent–based reasoning, and web-based visualisation support long-term analysis and pattern identification.
+
+By combining biological air treatment, Edge AI–based safety mechanisms, and cloud-assisted research workflows, SmartBio Air functions both as a practical indoor air purification system and as a research platform suitable for studies in TinyML, IoT-based environmental sensing, and sustainable bio-assisted systems.
 
 ---
 
-## Examples  
-Representative use cases include:
+## Background  
+Indoor air pollution has become a growing concern due to increased time spent in enclosed environments and the presence of gaseous pollutants such as carbon monoxide, volatile organic compounds, and particulate matter. Conventional air purification systems rely mainly on mechanical filtration or chemical absorption, which often require frequent maintenance and do not contribute to long-term environmental sustainability.
 
-- Indoor air quality monitoring in enclosed environments  
-- Observation of algae response to light, air pollutants, and temperature  
-- Motor pump fault detection using vibration-based Edge ML  
-- Edge AI and Cloud AI co-execution experiments  
+Biological air treatment using microalgae has gained research interest due to its natural ability to absorb carbon dioxide and certain airborne contaminants while producing oxygen through photosynthesis. Despite this potential, most algae-based purification systems remain confined to laboratory studies and lack real-time sensing, adaptive control, and long-term observational capability.
+
+Recent progress in Internet of Things platforms, Edge AI, and cloud-based analytics allows biological systems to be monitored continuously and studied under real environmental conditions. Integrating these technologies offers an opportunity to bridge the gap between biological air purification research and deployable indoor systems.
+
+---
+
+## Problem Statement  
+Existing indoor air purifiers operate as isolated mechanical systems with limited environmental awareness and no capacity to study biological purification processes over time. Algae-based air purification concepts, while promising, often lack continuous monitoring, fault tolerance, and autonomous operation required for indoor deployment.
+
+There is a lack of systems that can safely operate in real environments while simultaneously collecting structured data to study how algae growth responds to air pollution levels, light conditions, and environmental changes. Network dependence further limits reliability, as cloud-only solutions cannot guarantee uninterrupted operation.
+
+A system is required that supports autonomous air purification, protects hardware components, and enables controlled scientific observation without compromising safety or continuity.
+
+---
+
+## Project Objectives  
+The primary objectives of this project are:
+
+- To design an indoor air purification system that incorporates living algae as a biological air treatment medium
+
+- To monitor indoor air quality and environmental parameters using multiple sensors
+
+- To implement on-device intelligence for safety-critical operation and motor pump protection
+
+- To study the relationship between air pollution levels, environmental conditions, and algae growth behavior
+
+- To support long-term data collection and visualization for research and analysis
+
+---
+
+## Solution  
+SmartBio Air proposes a hybrid Edge AI and Cloud AI system deployed on the MYOSA Mini IoT Kit. The system integrates gas sensors, environmental sensors, and a biologically active algae chamber to support both air purification and research observation.
+
+Time-sensitive decisions such as air quality response and motor pump health classification are executed locally on the device using on-device inference and threshold logic. For research purposes, sensor data is transmitted to cloud-based services where it is stored, correlated, and interpreted using AI agents.
+
+The system operates in two modes: an offline mode for uninterrupted autonomous operation and an online mode intended for environmental analysis and algae growth research.
+
+---
+
+## Innovation / Novelty  
+
+- Integration of living microalgae as an active biological air treatment component within an intelligent indoor air purification system  
+
+- Dual-mode system architecture that separates safety-critical Edge AI operation from cloud-based research and analysis  
+
+- Use of on-device TinyML inference for motor pump health monitoring using vibration data  
+
+- Continuous multi-sensor environmental monitoring linked directly to biological response observation  
+
+- Cloud-assisted research workflow designed specifically to study the relationship between algae growth and air pollution levels  
+
+- Autonomous offline operation that maintains air purification and system safety during network unavailability  
+
+- Modular and reproducible design using the MYOSA Mini IoT Kit, enabling educational, research, and experimental reuse  
+
+---
+
+## Scope of the Project  
+The scope of this project includes indoor air quality monitoring, algae-based biological air treatment, autonomous motor control, and cloud-assisted data analysis within controlled indoor environments.
+
+The project focuses on system design, sensing, data collection, and observational study rather than clinical validation of health outcomes. Large-scale deployment, medical certification, and industrial manufacturing considerations are outside the present scope.
+
+---
+
+## Expected Outcomes 
+The expected outcomes of the project include:
+
+- A functional indoor air purification prototype with algae-based biological treatment
+
+- Reliable autonomous operation during network unavailability
+
+- Continuous monitoring of air quality and environmental conditions
+
+- A structured dataset linking air pollution levels with algae growth behavior
+
+- A reusable platform suitable for academic study in TinyML, IoT-based sensing, and bio-assisted environmental systems
 
 ---
 
@@ -90,25 +169,32 @@ _Add a short demonstration video showing live system operation._
 ## Tech Stack  
 
 ### Hardware  
-- MYOSA Mini IoT Kit (ESP32)  
+- MYOSA Motherboard (ESP32)  
 - MPU6050  
 - APDS9960  
-- BMP180  
-- MQ-2, MQ-3, MQ-7, MQ-135  
-- SSD1306 OLED  
+- BMP180
+- SSD1306 OLED
+- L298N
+- 3.3V Mini Fan
+- MQ-2, MQ-3, MQ-7, MQ-135
+- 6V DC Motor Air Pump
+- 4 Channel 12V Relay Board
+- 12V Plant Grow LED
+
 
 ### Firmware  
-- Arduino / ESP-IDF  
+- Arduino 
 - Edge Impulse TinyML inference  
 
 ### Cloud  
 - Microsoft Azure Functions  
-- Azure AI services  
+- Azure OpenAI services
 
 ### Frontend  
 - HTML  
 - CSS  
-- JavaScript (Static Web Application)  
+- JavaScript
+- GitHub Page
 
 ---
 
