@@ -111,6 +111,11 @@ _Add images of the system setup, algae chamber, sensor wiring, OLED output, and 
 _Add a short demonstration video showing live system operation._
 
 ---
+<p align="center">
+  <img src="src/video/360.gif" width="100%" />
+</p>
+
+---
 
 <p align="center">
   <img src="src/video/Demo.gif" width="100%" />
