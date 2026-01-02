@@ -131,6 +131,14 @@ https://github.com/user-attachments/assets/dc5e86f7-b55a-48e4-8528-622ea4c8585f
   <img src="src/video/Demo.gif" width="100%" />
 </p>
 
+<p align="center">
+  <a href="https://nimalan-parameswaran.github.io/SmartBio-Air/" target="_blank">
+    Click here! Web App
+  </a>
+</p>
+
+
+
 ---
 
 ## Novelty  
@@ -158,8 +166,8 @@ The project focuses on system design, sensing, data collection, and observationa
 
 ---
 
-## Expected Outcomes 
-The expected outcomes of the project include:
+##  Outcomes 
+Outcomes of the project include:
 
 - A functional indoor air purification prototype with algae-based biological treatment
 
@@ -167,13 +175,13 @@ The expected outcomes of the project include:
 
 - Continuous monitoring of air quality and environmental conditions
 
-- A structured dataset linking air pollution levels with algae growth behavior
+- A structured dataset linking air pollution levels with algae growth behaviour
 
 - A reusable platform suitable for academic study in TinyML, IoT-based sensing, and bio-assisted environmental systems
 
 ---
 
-## Features (Detailed)  
+## Features
 
 - Algae-assisted indoor air purification chamber  
 - Multi-gas monitoring using MQ-series sensors  
@@ -181,7 +189,7 @@ The expected outcomes of the project include:
 - Autonomous offline execution on MYOSA (ESP32)  
 - Cloud-based AI agents for monitoring and research study  
 - Local OLED display for system status and air quality level  
-- Web-based visualization using a static dashboard  
+- Web-based visualisation using a static dashboard  
 
 ---
 
@@ -250,7 +258,7 @@ Hardware deployment and firmware flashing require external tools and are not doc
 
 ---
 
-## File Structure (Optional)  
+## File Structure
 
 ```
 SmartBio-Air/
