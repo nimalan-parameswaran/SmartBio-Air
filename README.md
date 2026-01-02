@@ -96,6 +96,7 @@ The system operates in two modes: a primary Edge control mode for uninterrupted 
 
 <h3 align="center"> Prototype </h3>
 
+
 ---
 ## Process Flow:
 <p align="center">
@@ -107,21 +108,28 @@ The system operates in two modes: a primary Edge control mode for uninterrupted 
 ## Demo  
 
 ### Images  
+
+<h1 align="center"> Prototype </h1>
+
 <p align="center">
   <img src="src/image/Img3.png" width="600">
 </p>
 
-<h3 align="center"> Prototype </h3>
 
 ---
 
 ### Videos  
 
+
+https://github.com/user-attachments/assets/dc5e86f7-b55a-48e4-8528-622ea4c8585f
+
+---
+
+<h1 align="center">  GitHub Static Web App </h1>
+
 <p align="center">
   <img src="src/video/Demo.gif" width="100%" />
 </p>
-
-<h1 align="center">  GitHub Static Web App </h1>
 
 ---
 
