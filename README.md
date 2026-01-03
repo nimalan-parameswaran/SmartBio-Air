@@ -151,7 +151,8 @@ The system operates in two modes: an autonomous Edge mode that prioritises conti
 
 <h3 align="center">  Demo video </h3>
 
-https://github.com/user-attachments/assets/dc5e86f7-b55a-48e4-8528-622ea4c8585f
+
+https://github.com/user-attachments/assets/aa2bb7f6-ebee-473a-9df1-b485679b08d6
 
 ---
 
