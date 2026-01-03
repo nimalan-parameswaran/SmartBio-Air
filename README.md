@@ -72,6 +72,8 @@ The system architecture is bifurcated into two synchronized operational states:
 
 By combining biological air treatment, Edge AI–based safety mechanisms, and cloud-assisted research workflows, SmartBio Air functions both as a practical indoor air purification system and as a research platform suitable for studies in TinyML, IoT-based environmental sensing, and sustainable bio-assisted systems.
 
+https://github.com/user-attachments/assets/f21e3904-1251-46a5-9048-0dae274d6665
+
 ---
 
 ## Background 
@@ -209,17 +211,6 @@ Clinical validation, large-scale deployment, and industrial manufacturing consid
 
 ---
 
-## Usage Instructions  
-
-1. Power the MYOSA Mini IoT Kit and connect all sensors  
-2. Allow MQ sensors adequate warm-up time  
-3. Monitor air quality and system state on the OLED display  
-4. Offline mode executes entirely on-device  
-5. Online mode transmits data to Azure services  
-6. View trends and summaries through the web dashboard  
-
----
-
 ## Tech Stack  
 
 ### Hardware  
@@ -252,11 +243,23 @@ Clinical validation, large-scale deployment, and industrial manufacturing consid
 
 ---
 
+## Usage Instructions  
+
+1. Power the MYOSA Mini IoT Kit and connect all sensors  
+2. Allow MQ sensors adequate warm-up time  
+3. Monitor air quality and system state on the OLED display  
+4. Offline mode executes entirely on-device  
+5. Online mode transmits data to Azure services  
+6. View trends and summaries through the web dashboard  
+
+---
+
+
 ## Requirements / Installation  
 
 ## Installation and setup
 
-This repository does not include automated installation or flashing scripts. The available setup steps are limited to the repository contents:
+This repository does not include automated installation or flashing scripts.
 
 1. Clone the repository:
    ```sh
