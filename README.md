@@ -142,7 +142,7 @@ The system operates in two modes: an autonomous Edge mode that prioritises conti
 <h3 align="center">  Prototype Design </h3>
 
 <p align="center">
-  <img src="src/video/360.gif" width="100%">
+  <img src="src/video/360 design" width="100%">
 </p>
 
 ---
