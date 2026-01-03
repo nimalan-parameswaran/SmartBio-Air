@@ -51,12 +51,20 @@ By combining biological air treatment, Edge AI–based safety mechanisms, and cl
 
 ---
 
-## Background  
-Indoor air pollution has become a growing concern due to increased time spent in enclosed environments and the presence of gaseous pollutants such as carbon monoxide, volatile organic compounds, and particulate matter. Conventional air purification systems rely mainly on mechanical filtration or chemical absorption, which often require frequent maintenance and do not contribute to long-term environmental sustainability.
+## Background 
 
-Biological air treatment using microalgae has gained research interest due to its natural ability to absorb carbon dioxide and certain airborne contaminants while producing oxygen through photosynthesis. Despite this potential, most algae-based purification systems remain confined to laboratory studies and lack real-time sensing, adaptive control, and long-term observational capability.
+Indoor air pollution has escalated into a critical public health challenge, exacerbated by rapid urbanization and the fact that modern populations spend approximately 70% of their time in enclosed environments. This issue is particularly acute in major Indian metropolitan areas, where hazardous ambient air quality infiltrates indoor spaces. Recent data indicates that pollution levels in India’s leading cities remain severely elevated. In 2024, Delhi recorded an annual average PM₂.₅ concentration of 91.8 µg/m³, while Lucknow reported 84.1 µg/m³, values far exceeding international safety guidelines. Even coastal economic hubs are affected, with Mumbai averaging 48.9 µg/m³ and Kolkata rising to 61.2 µg/m³ during the same period.
 
-Recent progress in Internet of Things platforms, Edge AI, and cloud-based analytics allows biological systems to be monitored continuously and studied under real environmental conditions. Integrating these technologies offers an opportunity to bridge the gap between biological air purification research and deployable indoor systems.
+Within enclosed indoor environments, pollutants accumulate rapidly. Beyond infiltrating particulate matter (PM₂.₅), indoor spaces experience rising levels of metabolically generated carbon dioxide (CO₂) and volatile organic compounds (VOCs). Conventional air purification systems, which rely primarily on mechanical HEPA filtration or chemical absorption, address only particulate removal. These approaches are subtractive in nature, capturing contaminants without producing oxygen or reducing carbon load. They are also energy-intensive and require frequent filter replacement, contributing to long-term material waste.
+
+Biological air treatment using microalgae presents a regenerative alternative. Microalgae exhibit higher photosynthetic efficiency than terrestrial plants, allowing them to absorb CO₂ while releasing oxygen and potentially metabolising airborne toxins. Despite this promise, algae-based systems have remained largely confined to laboratory environments. As living systems, microalgae require stable environmental conditions and controlled operation, limiting their suitability for uncontrolled indoor deployment.
+
+Recent advances in Internet of Things (IoT) platforms, Edge AI, and cloud-based analytics enable continuous sensing, autonomous control, and long-term observation of biological systems in real environments. These capabilities create an opportunity to translate experimental algae-based air purification concepts into resilient indoor systems. SmartBio Air applies these technologies to establish a self-sustaining bio-purification platform capable of safe operation and structured scientific observation under real-world conditions.
+
+<p align="center">
+  <img src="src/image/World Air Quality Report (IQAir).png" width="100%" /> 
+</p>
+
 
 ---
 
