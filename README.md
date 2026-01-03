@@ -35,6 +35,29 @@ Finally, we acknowledge **Ms. Pinki Dey**, Assistant Professor II, Department of
 
 ---
 
+## Table of Contents
+
+| No. | Section |
+|----:|---------|
+| 1 | [Overview](#overview) |
+| 2 | [Background](#background) |
+| 3 | [Problem Statement](#problem-statement) |
+| 4 | [Project Objectives](#project-objectives) |
+| 5 | [Solution](#solution) |
+| 6 | [Process Flow](#process-flow) |
+| 7 | [Prototype](#prototype) |
+| 8 | [Novelty](#novelty) |
+| 9 | [Scope of the Project](#scope-of-the-project) |
+| 10 | [Outcomes](#outcomes) |
+| 11 | [Features](#features) |
+| 12 | [Usage Instructions](#usage-instructions) |
+| 13 | [Tech Stack](#tech-stack) |
+| 14 | [Requirements / Installation](#requirements--installation) |
+| 15 | [File Structure](#file-structure) |
+| 16 | [License](#license) |
+| 17 | [Contribution Notes](#contribution-notes) |
+
+---
 ## Overview  
 
 **SmartBio Air** is an indoor air purification and experimental research system that combines biological air treatment using algae with multi-sensor environmental monitoring and intelligent control. The system is designed not only to support indoor air purification, but also to experimentally observe and document the relationship between environmental conditions, air pollutants, and algae growth behavior over time.
