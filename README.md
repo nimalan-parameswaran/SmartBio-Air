@@ -83,18 +83,19 @@ The primary objectives of this project are:
 - To support long-term data collection and visualization for research and analysis
 
 ---
-## Solution  
-SmartBio Air proposes a hybrid Edge AI and Cloud AI system deployed on the MYOSA Mini IoT Kit. The system integrates gas sensors, environmental sensors, and a biologically active algae chamber to support both air purification and research observation.
+## Solution
 
-Time-sensitive decisions such as air quality response and motor pump health classification are executed locally on the device using on-device inference and threshold logic. For research purposes, sensor data is transmitted to cloud-based services where it is stored, correlated, and interpreted using AI agents.
+SmartBio Air is implemented on the MYOSA Mini IoT Kit using a hybrid on-device and cloud-assisted intelligence approach designed for safe indoor operation and research observation. The system combines gas sensors, environmental sensors, and a biologically active algae chamber to support air purification while enabling continuous monitoring of surrounding conditions.
 
-The system operates in two modes: a primary Edge control mode for uninterrupted autonomous operation and a Cloud AI Agent mode intended for environmental analysis and algae growth research.
+All safety-critical and time-sensitive functions, including air quality response and motor pump health monitoring, are executed locally on the device through embedded inference and threshold-based logic. This local execution allows uninterrupted operation even during network unavailability and protects hardware components from abnormal operating conditions.
 
 <p align="center">
-  <img src="src/video/360.gif" width="50%" />
+  <img src="src/image/Img3.png" width="50%" /> 
 </p>
 
-<h3 align="center"> Prototype </h3>
+For experimental and analytical purposes, sensor measurements are transmitted to cloud services when connectivity is available. These services support structured data storage, correlation, and AI-based reasoning to study relationships between air pollution levels, environmental parameters, and algae growth behaviour over extended periods.
+
+The system operates in two modes: an autonomous Edge mode that prioritises continuous air purification and system safety, and a cloud-connected mode focused on long-term environmental analysis and biological observation.
 
 
 ---
@@ -105,27 +106,23 @@ The system operates in two modes: a primary Edge control mode for uninterrupted 
 
 ---
 
-## Demo  
+## Prototype  
 
-### Images  
-
-<h1 align="center"> Prototype </h1>
+<h3 align="center">  Prototype Design </h3>
 
 <p align="center">
-  <img src="src/image/Img3.png" width="600">
+  <img src="src/video/360.gif" width="100%">
 </p>
-
 
 ---
 
-### Videos  
-
+<h3 align="center">  Demo video </h3>
 
 https://github.com/user-attachments/assets/dc5e86f7-b55a-48e4-8528-622ea4c8585f
 
 ---
 
-<h1 align="center">  GitHub Static Web App </h1>
+<h3 align="center">  GitHub Static Web App </h3>
 
 <p align="center">
   <img src="src/video/Demo.gif" width="100%" />
@@ -137,70 +134,58 @@ https://github.com/user-attachments/assets/dc5e86f7-b55a-48e4-8528-622ea4c8585f
   </a>
 </p>
 
-
-
 ---
 
 ## Novelty  
 
-- Integration of living microalgae as an active biological air treatment component within an intelligent indoor air purification system  
+- Use of living microalgae as an active biological air treatment component  
+- Dual-mode architecture separating safety-critical on-device execution from cloud-based research tasks  
+- On-device TinyML inference for motor pump health monitoring using vibration data  
+- Continuous environmental sensing linked with biological response observation  
+- Cloud-assisted workflow dedicated to studying algae behaviour under varying air conditions  
+- Autonomous operation during network unavailability  
+- Modular design using the MYOSA Mini IoT Kit suitable for educational and research reuse  
 
-- Dual-mode system architecture that separates safety-critical Edge AI operation from cloud-based research and analysis  
-
-- Use of on-device TinyML inference for motor pump health monitoring using vibration data  
-
-- Continuous multi-sensor environmental monitoring linked directly to biological response observation  
-
-- Cloud-assisted research workflow designed specifically to study the relationship between algae growth and air pollution levels  
-
-- Autonomous offline operation that maintains air purification and system safety during network unavailability  
-
-- Modular and reproducible design using the MYOSA Mini IoT Kit, enabling educational, research, and experimental reuse  
 
 ---
 
-## Scope of the Project  
-The scope of this project includes indoor air quality monitoring, algae-based biological air treatment, autonomous motor control, and cloud-assisted data analysis within controlled indoor environments.
+## Scope of the Project
 
-The project focuses on system design, sensing, data collection, and observational study rather than clinical validation of health outcomes. Large-scale deployment, medical certification, and industrial manufacturing considerations are outside the present scope.
+This project covers indoor air quality monitoring, algae-based biological treatment, autonomous motor control, and cloud-assisted data analysis within controlled indoor environments.
+Clinical validation, large-scale deployment, and industrial manufacturing considerations are outside the present scope.
 
 ---
 
 ##  Outcomes 
-Outcomes of the project include:
 
-- A functional indoor air purification prototype with algae-based biological treatment
-
-- Reliable autonomous operation during network unavailability
-
-- Continuous monitoring of air quality and environmental conditions
-
-- A structured dataset linking air pollution levels with algae growth behaviour
-
-- A reusable platform suitable for academic study in TinyML, IoT-based sensing, and bio-assisted environmental systems
+- Functional indoor air purification prototype using algae-based treatment  
+- Autonomous execution during network outages  
+- Continuous air quality and environmental monitoring  
+- Structured dataset linking pollution levels with algae growth behaviour  
+- A reusable research platform for studies in TinyML, IoT sensing, and bio-assisted systems  
 
 ---
 
 ## Features
 
 - Algae-assisted indoor air purification chamber  
-- Multi-gas monitoring using MQ-series sensors  
-- Motor pump health classification using MPU6050 and Edge ML  
+- Multi-gas sensing using MQ-series sensors  
+- Motor pump health classification using MPU6050 and embedded ML  
 - Autonomous offline execution on MYOSA (ESP32)  
-- Cloud-based AI agents for monitoring and research study  
-- Local OLED display for system status and air quality level  
-- Web-based visualisation using a static dashboard  
+- Cloud-based AI agents for monitoring and research  
+- Local OLED display for system status  
+- Web-based static dashboard for visualisation  
 
 ---
 
 ## Usage Instructions  
 
-1. Power the MYOSA Mini IoT Kit and connect all sensors securely  
-2. Allow MQ sensors sufficient warm-up time for stable readings  
-3. Observe system state and air quality on the OLED display  
-4. In offline mode, the system executes fully on-device  
-5. In online mode, sensor data is transmitted to Azure for AI processing  
-6. View environmental trends and system summaries through the web dashboard  
+1. Power the MYOSA Mini IoT Kit and connect all sensors  
+2. Allow MQ sensors adequate warm-up time  
+3. Monitor air quality and system state on the OLED display  
+4. Offline mode executes entirely on-device  
+5. Online mode transmits data to Azure services  
+6. View trends and summaries through the web dashboard  
 
 ---
 
@@ -288,10 +273,11 @@ SmartBio-Air/
 ```
 
 ## License
-This project is licensed under the MIT License. See the LICENSE file for details.
+
+This project is licensed under the MIT License. Refer to the LICENSE file for details.
 
 ---
 
 ## Contribution Notes
-This repository is intended for research and educational use.  
-Contributors are encouraged to document experimental conditions, sensor calibration steps, and data collection procedures clearly when submitting updates.
+
+This repository is intended for research and educational use. Contributors are encouraged to document experimental conditions, sensor calibration steps, and data collection procedures clearly when submitting updates.
