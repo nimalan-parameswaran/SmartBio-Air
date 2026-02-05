@@ -426,11 +426,9 @@
 
         // --- FIREBASE CONFIGURATION ---
         // Use apiKey to make API calls
-        const apiKey = process.env.MY_API_KEY;
-        const apiKey = process.env.DATABASE_URL;
         const firebaseConfig = {
-            apiKey: "MY_API_KEY",
-            databaseURL: "jzjzj"
+            apiKey: "__API_KEY__",
+            databaseURL: "__DB_URL__"
         };
 
         const app = initializeApp(firebaseConfig);
